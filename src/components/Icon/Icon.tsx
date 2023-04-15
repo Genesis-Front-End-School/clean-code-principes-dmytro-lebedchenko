@@ -8,14 +8,12 @@ type Props = {
   addClassName?: string;
 };
 
-export const Icon: React.FC<Props> = ({ type, addClassName }) => {
-  return (
-    <span
-      className={classNames(
-        'icon',
-        type,
-        addClassName,
-      )}
-    />
-  );
-};
+export const Icon: React.FC<Props> = ({ type, addClassName }) => (
+  <span
+    className={classNames(
+      'icon',
+      type,
+      addClassName,
+    )}
+  />
+);
