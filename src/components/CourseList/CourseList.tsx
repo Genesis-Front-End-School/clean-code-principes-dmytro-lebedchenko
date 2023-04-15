@@ -1,4 +1,8 @@
-import { useMemo } from 'react';
+import {
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { useAppSelector } from '../../app/hooks';
@@ -12,22 +16,23 @@ export const CourseList: React.FC = () => {
 
   const [searchParams] = useSearchParams();
 
+  const [leftLimit, setLeftLimit] = useState(0);
+  const [rightLimit, setRightLimit] = useState(courses.length);
+
   const currentPage = searchParams.get('page') || '1';
   const perPage = 10;
 
-  let leftLimit = 0;
-  let rightLimit = courses.length;
+  useEffect(() => {
+    const maxRightLimit = perPage * +currentPage;
 
-  if (currentPage && perPage) {
-    leftLimit = perPage * (+currentPage - 1);
+    if (maxRightLimit > courses.length) {
+      setRightLimit(courses.length);
+    } else {
+      setRightLimit(maxRightLimit);
+    }
 
-    rightLimit = perPage * +currentPage > courses.length
-      ? courses.length
-      : perPage * +currentPage;
-  } else {
-    leftLimit = 0;
-    rightLimit = courses.length;
-  }
+    setLeftLimit(perPage * (+currentPage - 1));
+  }, [currentPage, perPage, courses]);
 
   const visibleCourses = useMemo((): Courses[] => {
     return courses.slice(leftLimit, rightLimit);

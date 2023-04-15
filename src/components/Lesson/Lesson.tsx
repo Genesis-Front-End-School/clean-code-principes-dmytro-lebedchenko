@@ -183,7 +183,7 @@ export const Lesson: React.FC = () => {
           poster={`${lesson?.previewImageLink}/lesson-${lesson?.order}.webp`}
           ref={videoRef}
           controls
-          onKeyDown={(event) => handleOnKeyDown(event)}
+          onKeyDown={handleOnKeyDown}
         >
           <track
             kind="captions"

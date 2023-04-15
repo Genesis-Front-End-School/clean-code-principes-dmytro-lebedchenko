@@ -95,7 +95,7 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
       className="course-card"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onKeyDown={(event) => handleOnKeyDown(event)}
+      onKeyDown={handleOnKeyDown}
       onClick={handleClick}
     >
       <h5
