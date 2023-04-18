@@ -75,9 +75,7 @@ export const Lesson: React.FC = () => {
       if (isPlaying) {
         video.pause();
         setIsPlaying(false);
-      }
-
-      if (!isPlaying) {
+      } else {
         video.play();
         setIsPlaying(true);
       }

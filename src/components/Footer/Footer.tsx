@@ -11,11 +11,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer__container">
-        {width > 640 ? (
-          <Logo type="big" />
-        ) : (
-          <Logo type="small" />
-        )}
+        <Logo type={(width > 640) ? 'big' : 'small'} />
 
         <Link
           to="https://github.com/dmytro-lebedchenko"

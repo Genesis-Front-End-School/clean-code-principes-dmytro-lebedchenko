@@ -109,17 +109,11 @@ export const Pagination: React.FC<Props> = ({ length }) => {
           disabled={disabledLeftButton}
           onClick={() => handleArrowClick('prev')}
         >
-          {!disabledLeftButton && (
-            <Icon
-              type={IconType.ARROW_LEFT}
-            />
-          )}
-
-          {disabledLeftButton && (
-            <Icon
-              type={IconType.ARROW_LEFT_DISABLED}
-            />
-          )}
+          <Icon
+            type={disabledLeftButton
+              ? IconType.ARROW_LEFT_DISABLED
+              : IconType.ARROW_LEFT}
+          />
         </button>
 
         <div className="pagination__list">
@@ -146,17 +140,11 @@ export const Pagination: React.FC<Props> = ({ length }) => {
           disabled={disabledRightButton}
           onClick={() => handleArrowClick('next')}
         >
-          {!disabledRightButton && (
-            <Icon
-              type={IconType.ARROW_RIGHT}
-            />
-          )}
-
-          {disabledRightButton && (
-            <Icon
-              type={IconType.ARROW_RIGHT_DISABLED}
-            />
-          )}
+          <Icon
+            type={disabledRightButton
+              ? IconType.ARROW_RIGHT_DISABLED
+              : IconType.ARROW_RIGHT}
+          />
         </button>
       </ul>
     </div>
