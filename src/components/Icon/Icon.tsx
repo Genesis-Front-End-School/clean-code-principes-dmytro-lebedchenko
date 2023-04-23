@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { IconType } from '../../types/IconType';
+import { IconType } from '../../types/enums';
 import './Icon.scss';
 
 type Props = {

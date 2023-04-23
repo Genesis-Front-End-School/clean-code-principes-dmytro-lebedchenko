@@ -11,8 +11,8 @@ import { useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 
 import { useAppSelector, useLocalStorage } from '../../app/hooks';
-import { IconType } from '../../types/IconType';
-import { LessonType } from '../../types/LessonType';
+import { IconType } from '../../types/enums';
+import { LessonType } from '../../types/models';
 import { getSearchWith } from '../../utils/searchHelper';
 import { Icon } from '../Icon';
 import './Lesson.scss';

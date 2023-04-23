@@ -6,7 +6,7 @@ import {
 import { useSearchParams } from 'react-router-dom';
 
 import { useAppSelector } from '../../app/hooks';
-import { Courses } from '../../types/Courses';
+import { Courses } from '../../types/models';
 import { CourseCard } from '../CourseCard';
 import { Pagination } from '../Pagination';
 import './CourseList.scss';

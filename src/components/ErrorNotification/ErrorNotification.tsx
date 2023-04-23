@@ -1,4 +1,4 @@
-import { ErrorType } from '../../types/ErrorType';
+import { ErrorType } from '../../types/enums';
 import './ErrorNotification.scss';
 
 type Props = {

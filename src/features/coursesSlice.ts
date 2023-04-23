@@ -5,7 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 
 import { getCourses } from '../api/getCourses';
-import { Courses } from '../types/Courses';
+import { Courses } from '../types/models';
 
 type State = {
   courses: Courses[];

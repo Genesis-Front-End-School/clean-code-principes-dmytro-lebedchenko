@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { IconType } from '../../types/IconType';
+import { IconType } from '../../types/enums';
 import { Icon } from '../Icon';
 import './BackButton.scss';
 

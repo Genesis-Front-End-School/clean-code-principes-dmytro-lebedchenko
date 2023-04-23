@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { LogoType } from '../../types/LogoType';
+import { LogoType } from '../../types/models';
 
 type Props = {
   type: LogoType;

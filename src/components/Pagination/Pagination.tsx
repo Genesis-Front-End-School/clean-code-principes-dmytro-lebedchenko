@@ -5,8 +5,8 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 
-import { ButtonType } from '../../types/ButtonType';
-import { IconType } from '../../types/IconType';
+import { ButtonType } from '../../types/models';
+import { IconType } from '../../types/enums';
 import { getSearchWith } from '../../utils/searchHelper';
 import { Icon } from '../Icon';
 import './Pagination.scss';

@@ -2,7 +2,7 @@ import { useAppSelector } from '../../app/hooks';
 import { CourseList } from '../../components/CourseList';
 import { ErrorNotification } from '../../components/ErrorNotification';
 import { Loader } from '../../components/Loader';
-import { ErrorType } from '../../types/ErrorType';
+import { ErrorType } from '../../types/enums';
 
 export const HomePage: React.FC = () => {
   const {

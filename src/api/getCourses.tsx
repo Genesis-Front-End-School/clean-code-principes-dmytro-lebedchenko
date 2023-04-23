@@ -1,5 +1,4 @@
-import { CourseDetails } from '../types/CourseDetails';
-import { Courses } from '../types/Courses';
+import { Courses, CourseDetails } from '../types/models';
 import { client } from '../utils/fetchClient';
 
 export const getCourses = async () => {

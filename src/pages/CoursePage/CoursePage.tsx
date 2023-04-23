@@ -6,7 +6,7 @@ import { Course } from '../../components/Course';
 import { ErrorNotification } from '../../components/ErrorNotification';
 import { Loader } from '../../components/Loader';
 import { selectedCourseInit } from '../../features/selectedCourseSlice';
-import { ErrorType } from '../../types/ErrorType';
+import { ErrorType } from '../../types/enums';
 
 export const CoursePage: React.FC = () => {
   const dispatch = useAppDispatch();

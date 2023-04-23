@@ -1,3 +1,8 @@
+export enum ErrorType {
+  GET_COURSES = 'Unable to get the courses',
+  GET_COURSE_DETAILS = 'Unable to get the course\'s details',
+}
+
 export enum IconType {
   ARROW_LEFT = 'icon__arrow-left',
   ARROW_LEFT_DISABLED = 'icon__arrow-left--disabled',

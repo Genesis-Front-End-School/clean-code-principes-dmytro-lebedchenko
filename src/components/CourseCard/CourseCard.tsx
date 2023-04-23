@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 import { useAppDispatch } from '../../app/hooks';
 import { selectedCourseInit } from '../../features/selectedCourseSlice';
-import { Courses } from '../../types/Courses';
+import { Courses } from '../../types/models';
 import { RatingStars } from '../RatingStars';
 import './CourseCard.scss';
 
@@ -60,6 +60,14 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
     }
   };
 
+  const courseCardClassNames = classNames(
+    'course-card__category',
+    { 'course-card__category--yellow': tags[0] === 'productivity' },
+    { 'course-card__category--purple': tags[0] === 'learning ability' },
+    { 'course-card__category--red': tags[0] === 'communication' },
+    { 'course-card__category--green': tags[0] === 'psychology' },
+  );
+
   useEffect(() => {
     let hls: Hls;
 
@@ -98,15 +106,7 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
       onKeyDown={handleOnKeyDown}
       onClick={handleClick}
     >
-      <h5
-        className={classNames(
-          'course-card__category',
-          { 'course-card__category--yellow': tags[0] === 'productivity' },
-          { 'course-card__category--purple': tags[0] === 'learning ability' },
-          { 'course-card__category--red': tags[0] === 'communication' },
-          { 'course-card__category--green': tags[0] === 'psychology' },
-        )}
-      >
+      <h5 className={courseCardClassNames}>
         {tags[0]}
       </h5>
 
