@@ -40,4 +40,4 @@ https://github.com/mariaparfenyuk/JavaScript-Design-Patterns/blob/main/singleton
 
 - Патерн "Декоратор" (Decorator)
 Цей код використовує патерн проектування "Декоратор". Він дозволяє динамічно додавати нові функціональності об'єкту, не змінюючи вихідний код. В даному випадку, у нас є базовий клас Pasta, а класи Penne, SauseDecorator та CheeseDecorator є декораторами, які доповнюють функціональність класу Pasta. Класи-декоратори також успадковуються від базового класу Pasta, що дозволяє використовувати методи, визначені в базовому класі. Клас SauseDecorator додає до ціни об'єкта Pasta 5, а CheeseDecorator - 3. Таким чином, ми можемо динамічно модифікувати об'єкти та додавати до них нові властивості та методи. <br>
-https://github.com/mariaparfenyuk/JavaScript-Design-Patterns/blob/main/decorator/script2.js
+https://github.com/mariaparfenyuk/JavaScript-Design-Patterns/blob/main/decorator/script2.js 

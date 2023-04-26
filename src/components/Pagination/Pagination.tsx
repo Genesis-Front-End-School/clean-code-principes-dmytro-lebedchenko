@@ -5,7 +5,7 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 
-import { ITEMS_PER_PAGE } from '../../app/consts';
+import { ITEMS_ON_PAGE } from '../../app/consts';
 import { IconType } from '../../types/enums';
 import { ButtonType } from '../../types/models';
 import { getSearchWith } from '../../utils/searchHelper';
@@ -87,11 +87,11 @@ export const Pagination: React.FC<Props> = ({ length }) => {
 
   useEffect(() => {
     const getTotalPages = () => {
-      if (!ITEMS_PER_PAGE) {
+      if (!ITEMS_ON_PAGE) {
         return 0;
       }
 
-      return Math.ceil(length / ITEMS_PER_PAGE);
+      return Math.ceil(length / ITEMS_ON_PAGE);
     };
 
     const pages = getTotalPages();

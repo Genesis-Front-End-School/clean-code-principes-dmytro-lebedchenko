@@ -10,7 +10,7 @@ import {
 import { useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 
-import { VIDEO_SETTINGS } from '../../app/consts';
+import { VIDEO_OPTIONS } from '../../app/consts';
 import { useAppSelector, useLocalStorage } from '../../app/hooks';
 import { IconType } from '../../types/enums';
 import { LessonType } from '../../types/models';
@@ -91,11 +91,11 @@ export const Lesson: React.FC = () => {
 
     if (video) {
       if (event.key === 'ArrowUp' && event.shiftKey) {
-        video.playbackRate += VIDEO_SETTINGS.speedUpRate;
+        video.playbackRate += VIDEO_OPTIONS.speedUpRate;
       }
 
       if (event.key === 'ArrowDown' && event.shiftKey) {
-        video.playbackRate -= VIDEO_SETTINGS.slowDownRate;
+        video.playbackRate -= VIDEO_OPTIONS.slowDownRate;
       }
     }
 

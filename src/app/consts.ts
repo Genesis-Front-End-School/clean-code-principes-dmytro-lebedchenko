@@ -8,9 +8,9 @@ export const ROUTE_PATH = {
   },
 };
 
-export const VIDEO_SETTINGS = {
+export const VIDEO_OPTIONS = {
   speedUpRate: 0.25,
   slowDownRate: 0.25,
 };
 
-export const ITEMS_PER_PAGE = 10;
+export const ITEMS_ON_PAGE = 10;
