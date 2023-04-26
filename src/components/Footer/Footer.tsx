@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import { ROUTE_PATH } from '../../app/consts';
 import { useWindowSize } from '../../app/hooks';
 import { Logo } from '../Logo';
 import { ToTopButton } from '../ToTopButton';
@@ -14,7 +15,7 @@ export const Footer: React.FC = () => {
         <Logo type={(width > 640) ? 'big' : 'small'} />
 
         <Link
-          to="https://github.com/dmytro-lebedchenko"
+          to={ROUTE_PATH.social.github}
           className="footer__link"
           target="_blank"
           rel="noreferrer"

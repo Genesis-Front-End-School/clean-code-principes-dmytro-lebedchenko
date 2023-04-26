@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import { ROUTE_PATH } from '../../app/consts';
 import { LogoType } from '../../types/models';
 
 type Props = {
@@ -8,8 +9,8 @@ type Props = {
 
 export const Logo: React.FC<Props> = ({ type }) => {
   const logoPath = (type === 'big')
-    ? './images/icons/logo.svg'
-    : './images/icons/logo-small.svg';
+    ? ROUTE_PATH.logo.big
+    : ROUTE_PATH.logo.small;
 
   return (
     <Link to="/">

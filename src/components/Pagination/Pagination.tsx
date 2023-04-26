@@ -5,8 +5,9 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 
-import { ButtonType } from '../../types/models';
+import { ITEMS_PER_PAGE } from '../../app/consts';
 import { IconType } from '../../types/enums';
+import { ButtonType } from '../../types/models';
 import { getSearchWith } from '../../utils/searchHelper';
 import { Icon } from '../Icon';
 import './Pagination.scss';
@@ -22,7 +23,6 @@ export const Pagination: React.FC<Props> = ({ length }) => {
   const [totalPages, setTotalPages] = useState(0);
 
   const page = searchParams.get('page') || '1';
-  const perPage = 10;
 
   const paginationList = (totalPages > 1)
     ? (Array.from(
@@ -87,11 +87,11 @@ export const Pagination: React.FC<Props> = ({ length }) => {
 
   useEffect(() => {
     const getTotalPages = () => {
-      if (!perPage) {
+      if (!ITEMS_PER_PAGE) {
         return 0;
       }
 
-      return Math.ceil(length / perPage);
+      return Math.ceil(length / ITEMS_PER_PAGE);
     };
 
     const pages = getTotalPages();
