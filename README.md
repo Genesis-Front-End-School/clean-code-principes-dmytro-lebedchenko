@@ -1,43 +1,68 @@
-# HW #2 // Принципи проектування SOLID/GRASP, GOF pattern
+# Courses App
 
 ## [DEMO LINK](https://dmytro-lebedchenko.github.io/react_courses-app/#/)
 
-# Опис мого завдання:
+# Table of contents
+- [Tech stack](#tech-stack)
+- [Project task](#project-task)
+- [Project structure](#project-structure)
+- [How to run my project locally](#how-to-run-my-project-locally)
 
-## Які принципи проектування використав у проекті:
-- Використав бібліотеку Redux основаної на Flux-архітектурі.
-Flux розділяє додаток на чотири шари: View, Action, Dispatcher і Store. Це дозволяє більш ефективно керувати даними та станом додатків, а також уникнути зайвого використання пропсів та зробити компоненти більш незалежними.
-У Redux реалізовані наступні принципи SOLID, такі як: принцип єдиної відповідальності (Single Responsibility Principle) та принцип інверсії залежності (Dependency Inversion Principle). Крім того, принцип відкритості/закритості (Open-Closed Principle) частково реалізується за рахунок використання middleware.
+# Tech stack
+  - React.JS
+  - React Router
+  - Redux
+  - Redux Toolkit
+  - JavaScript
+  - TypeScript
+  - HTML
+  - CSS/SCSS
+  - BEM
+  - FETCH, API
+  - localStorage
 
-- Використав бібліотеку React Router, яка реалізує патерн проектування "маршрутизатор" (Router Pattern), який дозволяє визначати маршрути в React-додатках.
+# Project task
+The application should contains two pages:
+  - page with courses;
+  - a page with a view of the course;
 
-- Реалізований окремий інструмент для роботи з сервером - fetchClient.ts.
-У цьому файлі реалізовано наступні принципи та патерни проектування, такі як:
-Принцип "єдиної відповідальності" (Single Responsibility Principle) - функція request відповідає лише за створення запиту до API, обробку помилок та повернення результату.
-Принцип "відкритості/закритості" (Open/Closed Principle) - функція request дозволяє додавати нові методи запиту до API, не змінюючи внутрішньої реалізації запиту.
-А також, загалом розділення функцій між request та client дозволяє зберігати окремі функції незалежними та легкими для розуміння та модифікації.
+Details about the pages:
+- The last 10 courses must be displayed in the course feed. The course includes:
+     - Photo of the course.
+     - Title of the course.
+     - Number of lessons, skills and rating.
+     - We display 10 courses on the page and add pagination.
+     - On card hover, play the muted video.
 
-## Що вдосконалив:
-- В рамках даного уроку, з метою вдосконалення та більш широкої реалізації принципу "єдиної відповідальності" (Single Responsibility Principle) на проекті, були винесені усі значення констант у окремий файл consts.ts, 
+- The course view page displays the first video from this course, details about the course and a list of lessons:
+     - When clicking on a lesson (if it is not blocked), the current video will open for viewing, the user must understand which lesson from the course he is viewing.
+     - It is necessary to save the progress of watching the video and the lesson of the course (save locally).
+     - If the lesson is blocked, show it to the user.
+     - Add 'picture in picture' effect when the video after click can be displayed in the lower right corner of the page.
+     - Add a change in video playback speed via the keyboard. Also display information next to the video on how to use it. (For the following project the mentioned shortcuts: <b>[Shift + ↑]</b> : for speed up the video; <b>[Shift + ↓]</b> : for slow down the video)
 
-## Приклади патернів з open source:
-- Патерн "Фабричний метод" (Factory Method)
-Цей код реалізує патерн "Фабричний метод" (Factory Method). У цьому випадку, функція droidProducer є фабричним методом, який створює та повертає різні об'єкти дроїдів в залежності від типу, переданого як параметр. <br>
-https://github.com/mariaparfenyuk/JavaScript-Design-Patterns/blob/main/factory/script3.js
+Additional tasks:
+- work through errors from the API;
+- adaptive for the mobile version;
+- video loading animation;
 
-- Патерн "Проксі" (Proxy)
-Цей код реалізує паттерн проектування "Проксі" (Proxy). Клас CarProxy виступає як проксі для класу Car.
-Клас CarProxy є проксі-об'єктом, оскільки він контролює доступ до об'єкту Car і додає до нього додаткову логіку перевірки віку водія. <br>
-https://github.com/mariaparfenyuk/JavaScript-Design-Patterns/blob/main/proxy/script.js
+# Project structure
+## Home page
+![Home page](./readme/preview/video-on-card-hover.gif)
+![Home page](./readme/preview/responsive-home-page.gif)
 
-- Патерн "Будівельник" (Builder)
-Цей код використовує патерн проектування "Будівельник" (Builder). Він дозволяє створювати складні об'єкти покроково, з різними параметрами, за допомогою того самого коду конструювання об'єкта. В даному випадку клас RequestBuilder відповідає за конструювання об'єкта типу Request, розбиваючи процес на окремі методи (forUrl(), useMethod(), payload()), кожен з яких відповідає за встановлення певної якості об'єкта. Насамкінець, виклик методу build() повертає готовий об'єкт типу Request. <br>
-https://github.com/mariaparfenyuk/JavaScript-Design-Patterns/blob/main/builder/script.js
+## Course page
+![Course page](./readme/preview/video-lessons-page.gif)
+![Course page](./readme/preview/responsive-courses-page.gif)
 
-- Патерн "Одинак" (Singleton)
-Цей код реалізує патерн Singleton. Singleton гарантує, що клас має лише один екземпляр і надає глобальну точку доступу до цього екземпляра. У цьому прикладі клас ClassSingleton має приватну статичну властивість #instances, яка зберігає кількість створених екземплярів класу. Конструктор класу перевіряє цю властивість і генерує виняток, якщо кількість екземплярів більша за одиницю. Таким чином, у додатку завжди існує лише один екземпляр класу ClassSingleton. <br>
-https://github.com/mariaparfenyuk/JavaScript-Design-Patterns/blob/main/singleton/script3.js
+## Not Found page
+![Not Found page](./readme/preview/not-found-page.gif)
 
-- Патерн "Декоратор" (Decorator)
-Цей код використовує патерн проектування "Декоратор". Він дозволяє динамічно додавати нові функціональності об'єкту, не змінюючи вихідний код. В даному випадку, у нас є базовий клас Pasta, а класи Penne, SauseDecorator та CheeseDecorator є декораторами, які доповнюють функціональність класу Pasta. Класи-декоратори також успадковуються від базового класу Pasta, що дозволяє використовувати методи, визначені в базовому класі. Клас SauseDecorator додає до ціни об'єкта Pasta 5, а CheeseDecorator - 3. Таким чином, ми можемо динамічно модифікувати об'єкти та додавати до них нові властивості та методи. <br>
-https://github.com/mariaparfenyuk/JavaScript-Design-Patterns/blob/main/decorator/script2.js
+# How to run my project locally:
+  - npm i
+  - npm start
+  - tab will be opened automatically in your browser
+
+If you'll have a problem with blocking CORSin your browser, you can install the [Chrome plugin](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) .
+And don't forget to turn it on, as on the screenshot below.
+![CORS issue](./readme/preview/cors_issue.jpeg)
