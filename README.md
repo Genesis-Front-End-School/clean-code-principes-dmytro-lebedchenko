@@ -1,23 +1,68 @@
-# HW #4 // Тестування
+# Courses App
 
 ## [DEMO LINK](https://dmytro-lebedchenko.github.io/react_courses-app/#/)
 
-# Опис мого завдання:
+# Table of contents
+- [Tech stack](#tech-stack)
+- [Project task](#project-task)
+- [Project structure](#project-structure)
+- [How to run my project locally](#how-to-run-my-project-locally)
 
-## Чому навчився:
-В рамках даного завдання, мною було опановано базові навички написання JavaScript тестів використовуючи Jest та Cypress. Також я ознайомився з документацією React Testing Library, Cypress, Jest, Enzyme, Vue-test-utils.
+# Tech stack
+  - React.JS
+  - React Router
+  - Redux
+  - Redux Toolkit
+  - JavaScript
+  - TypeScript
+  - HTML
+  - CSS/SCSS
+  - BEM
+  - FETCH, API
+  - localStorage
 
-## Структура:
-Unit-тести написані на основі фреймворку Jest знаходяться у `src/tests`, де тести для `pages` і `components` розміщені у відповідних папках. Також у корені папки `tests` є файл `testData.ts`, в якому розміщенні базові константи, які використовуються у процесі тестування.
+# Project task
+The application should contains two pages:
+  - page with courses;
+  - a page with a view of the course;
 
-Автоматичні тести створені на базі бібліотеки Cypress, розміщенні у кореневій папці проекту. Файл з тестами для проекту знаходяться тут: `Cypress/e2e/app.cy.js`.
+Details about the pages:
+- The last 10 courses must be displayed in the course feed. The course includes:
+     - Photo of the course.
+     - Title of the course.
+     - Number of lessons, skills and rating.
+     - We display 10 courses on the page and add pagination.
+     - On card hover, play the muted video.
 
-## Як запустити тести:
-`npm i` – для встановлення усіх необхідних залежностей. <br>
-`npm run jest` – для запуску виключно unit-тестів на базі Jest. <br>
-`npm run test` – для запуску комплексного тестування(Jest, Cypress) та генерування структурованого html-репорту Mochawesome з результатом тестування, який буде знаходись у кореневій папці `mochawesome-report/mochawesome.html`.
+- The course view page displays the first video from this course, details about the course and a list of lessons:
+     - When clicking on a lesson (if it is not blocked), the current video will open for viewing, the user must understand which lesson from the course he is viewing.
+     - It is necessary to save the progress of watching the video and the lesson of the course (save locally).
+     - If the lesson is blocked, show it to the user.
+     - Add 'picture in picture' effect when the video after click can be displayed in the lower right corner of the page.
+     - Add a change in video playback speed via the keyboard. Also display information next to the video on how to use it. (For the following project the mentioned shortcuts: <b>[Shift + ↑]</b> : for speed up the video; <b>[Shift + ↓]</b> : for slow down the video)
 
-## Test report
-## [TEST REPORT - DEMO LINK](./mochawesome-report/mochawesome.html)
+Additional tasks:
+- work through errors from the API;
+- adaptive for the mobile version;
+- video loading animation;
 
-![Mochawesome report](./readme/preview/mocha_report.gif)
+# Project structure
+## Home page
+![Home page](./readme/preview/video-on-card-hover.gif)
+![Home page](./readme/preview/responsive-home-page.gif)
+
+## Course page
+![Course page](./readme/preview/video-lessons-page.gif)
+![Course page](./readme/preview/responsive-courses-page.gif)
+
+## Not Found page
+![Not Found page](./readme/preview/not-found-page.gif)
+
+# How to run my project locally:
+  - npm i
+  - npm start
+  - tab will be opened automatically in your browser
+
+If you'll have a problem with blocking CORSin your browser, you can install the [Chrome plugin](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) .
+And don't forget to turn it on, as on the screenshot below.
+![CORS issue](./readme/preview/cors_issue.jpeg)
