@@ -5,7 +5,7 @@ import {
 } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { ITEMS_PER_PAGE } from '../../app/consts';
+import { ITEMS_ON_PAGE } from '../../app/consts';
 import { useAppSelector } from '../../app/hooks';
 import { Courses } from '../../types/models';
 import { CourseCard } from '../CourseCard';
@@ -26,7 +26,7 @@ export const CourseList: React.FC = () => {
   }, [courses, leftLimit, rightLimit]);
 
   useEffect(() => {
-    const maxRightLimit = ITEMS_PER_PAGE * +currentPage;
+    const maxRightLimit = ITEMS_ON_PAGE * +currentPage;
 
     if (maxRightLimit > courses.length) {
       setRightLimit(courses.length);
@@ -34,7 +34,7 @@ export const CourseList: React.FC = () => {
       setRightLimit(maxRightLimit);
     }
 
-    setLeftLimit(ITEMS_PER_PAGE * (+currentPage - 1));
+    setLeftLimit(ITEMS_ON_PAGE * (+currentPage - 1));
   }, [currentPage, courses]);
 
   return (
