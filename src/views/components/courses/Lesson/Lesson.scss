@@ -22,7 +22,7 @@
 
   &:hover &__description {
     opacity: 1;
-    box-shadow: 0 3px 13px rgba(23, 32, 49, 0.26);
+    box-shadow: 0 3px 13px $color-shadow-primary;
   }
 
   &__title {
@@ -41,6 +41,7 @@
     padding: 10px;
     opacity: 0;
 
+    color: $color-primary;
     border: 2px solid $color-secondary;
     border-radius: 10px;
     background-color: $color-white;
@@ -79,12 +80,24 @@
     transition: all 0.5s;
     cursor: pointer;
 
+    &--dark {
+      background-color: $color-black;
+
+      &:hover .playlist__item-title--dark {
+        color: $color-primary;
+      }
+    }
+
     &:hover {
       background-color: $color-elements;
     }
 
     &--active {
       background-color: $color-green;
+
+      &-dark {
+        background-color: $color-green-dark;
+      }
     }
 
     &--disabled {
@@ -103,5 +116,10 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     word-wrap: normal;
+    color: $color-primary;
+
+    &--dark {
+      color: $color-white;
+    }
   }
 }

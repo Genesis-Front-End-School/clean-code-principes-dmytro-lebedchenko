@@ -1,6 +1,6 @@
 export type ButtonType = 'prev' | 'next';
 
-export type LogoType = 'big' | 'small';
+export type LogoType = 'big' | 'big-dark' | 'small';
 
 export interface Courses {
   id: string;

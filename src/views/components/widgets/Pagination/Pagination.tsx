@@ -5,9 +5,10 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 
-import { ITEMS_ON_PAGE } from '../../../../services/app/consts';
-import { ButtonType } from '../../../../data/types/models';
 import { IconType } from '../../../../data/types/enums';
+import { ButtonType } from '../../../../data/types/models';
+import { ITEMS_ON_PAGE } from '../../../../services/app/consts';
+import { useAppSelector } from '../../../../services/app/hooks';
 import { getSearchWith } from '../../../../services/utils/searchHelper';
 import { Icon } from '../../ui/Icon';
 import './Pagination.scss';
@@ -19,6 +20,8 @@ type Props = {
 export const Pagination: React.FC<Props> = ({ length }) => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+
+  const { isDarkMode } = useAppSelector(state => state.theme);
 
   const [totalPages, setTotalPages] = useState(0);
 
@@ -36,6 +39,34 @@ export const Pagination: React.FC<Props> = ({ length }) => {
   const disabledRightButton = (page === '1')
     ? (page === `${totalPages + 1}`)
     : (page === `${totalPages}`);
+
+  const leftButtonCondition = () => {
+    switch (true) {
+      case disabledLeftButton:
+        return IconType.ARROW_LEFT_DISABLED;
+
+      case !disabledLeftButton && isDarkMode:
+        return IconType.ARROW_LEFT_DARK;
+
+      default:
+      case !disabledLeftButton && !isDarkMode:
+        return IconType.ARROW_LEFT;
+    }
+  };
+
+  const rightButtonCondition = () => {
+    switch (true) {
+      case disabledRightButton:
+        return IconType.ARROW_RIGHT_DISABLED;
+
+      case !disabledRightButton && isDarkMode:
+        return IconType.ARROW_RIGHT_DARK;
+
+      default:
+      case !disabledRightButton && !isDarkMode:
+        return IconType.ARROW_RIGHT;
+    }
+  };
 
   const handlePageClick = (pageItem: number) => {
     if (page === `${pageItem}`) {
@@ -104,16 +135,14 @@ export const Pagination: React.FC<Props> = ({ length }) => {
       <ul className="pagination">
         <button
           type="button"
-          className="pagination__button"
+          className={classNames('pagination__button', {
+            'pagination__button--dark': isDarkMode,
+          })}
           data-testid="pagination-left"
           disabled={disabledLeftButton}
           onClick={() => handleArrowClick('prev')}
         >
-          <Icon
-            type={disabledLeftButton
-              ? IconType.ARROW_LEFT_DISABLED
-              : IconType.ARROW_LEFT}
-          />
+          <Icon type={leftButtonCondition()} />
         </button>
 
         <div className="pagination__list">
@@ -121,11 +150,13 @@ export const Pagination: React.FC<Props> = ({ length }) => {
             <button
               key={pageNumber}
               type="button"
-              className={
-                classNames('pagination__item', {
-                  'pagination__item--is-active': +page === pageNumber,
-                })
-              }
+              className={classNames('pagination__item', {
+                'pagination__item--dark': isDarkMode,
+                'pagination__item--is-active':
+                  !isDarkMode && +page === pageNumber,
+                'pagination__item--dark-is-active':
+                  isDarkMode && +page === pageNumber,
+              })}
               onClick={() => handlePageClick(pageNumber)}
             >
               {pageNumber}
@@ -135,16 +166,14 @@ export const Pagination: React.FC<Props> = ({ length }) => {
 
         <button
           type="button"
-          className="pagination__button"
+          className={classNames('pagination__button', {
+            'pagination__button--dark': isDarkMode,
+          })}
           data-testid="pagination-right"
           disabled={disabledRightButton}
           onClick={() => handleArrowClick('next')}
         >
-          <Icon
-            type={disabledRightButton
-              ? IconType.ARROW_RIGHT_DISABLED
-              : IconType.ARROW_RIGHT}
-          />
+          <Icon type={rightButtonCondition()} />
         </button>
       </ul>
     </div>

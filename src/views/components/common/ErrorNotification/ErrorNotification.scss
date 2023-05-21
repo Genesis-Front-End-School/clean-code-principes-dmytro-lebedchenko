@@ -8,4 +8,9 @@
 
   @extend %big-text;
   color: $color-primary;
+  transition: all 0.50s linear;
+
+  &--dark {
+    color: $color-white;
+  }
 }

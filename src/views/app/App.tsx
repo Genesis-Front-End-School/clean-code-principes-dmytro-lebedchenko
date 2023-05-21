@@ -1,21 +1,26 @@
+import classNames from 'classnames';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router';
 
-import { useAppDispatch } from '../../services/app/hooks';
+import { useAppDispatch, useAppSelector } from '../../services/app/hooks';
 import { coursesInit } from '../../services/features/coursesSlice';
-import { Header } from '../components/common/Header';
 import { Footer } from '../components/common/Footer';
+import { Header } from '../components/common/Header';
 import './App.scss';
 
 export const App: React.FC = () => {
   const dispatch = useAppDispatch();
+  const { isDarkMode } = useAppSelector(state => state.theme);
 
   useEffect(() => {
     dispatch(coursesInit());
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div className={classNames('App', {
+      'App--dark': isDarkMode,
+    })}
+    >
       <Header />
 
       <main>

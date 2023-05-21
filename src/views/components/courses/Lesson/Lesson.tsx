@@ -10,16 +10,20 @@ import {
 import { useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 
-import { VIDEO_OPTIONS } from '../../../../services/app/consts';
-import { useAppSelector, useLocalStorage } from '../../../../services/app/hooks';
-import { LessonType } from '../../../../data/types/models';
 import { IconType } from '../../../../data/types/enums';
+import { LessonType } from '../../../../data/types/models';
+import { VIDEO_OPTIONS } from '../../../../services/app/consts';
+import {
+  useAppSelector,
+  useLocalStorage,
+} from '../../../../services/app/hooks';
 import { getSearchWith } from '../../../../services/utils/searchHelper';
 import { Icon } from '../../ui/Icon';
 import './Lesson.scss';
 
 export const Lesson: React.FC = () => {
   const { selectedCourse } = useAppSelector(state => state.selectedCourse);
+  const { isDarkMode } = useAppSelector(state => state.theme);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -207,13 +211,14 @@ export const Lesson: React.FC = () => {
             <button
               type="button"
               key={item.id}
-              className={
-                classNames('playlist__item', {
-                  'playlist__item--active':
+              className={classNames('playlist__item', {
+                'playlist__item--dark': isDarkMode,
+                'playlist__item--active':
                   lesson?.id === item.id && item.status !== 'locked',
-                  'playlist__item--disabled': item.status === 'locked',
-                })
-              }
+                'playlist__item--active-dark': isDarkMode
+                  && lesson?.id === item.id && item.status !== 'locked',
+                'playlist__item--disabled': item.status === 'locked',
+              })}
               onKeyDown={(event) => handleOnKeyDown(event, item)}
               onClick={() => handleClick(item)}
               disabled={item.status === 'locked'}
@@ -237,7 +242,11 @@ export const Lesson: React.FC = () => {
                   />
                 )}
 
-              <p className="playlist__item-title">
+              <p
+                className={classNames('playlist__item-title', {
+                  'playlist__item-title--dark': isDarkMode,
+                })}
+              >
                 {item.title}
               </p>
             </button>

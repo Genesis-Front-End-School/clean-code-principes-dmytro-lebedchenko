@@ -9,6 +9,13 @@
 
   @extend %body-text;
   color: $color-primary;
+  background-color: $color-white;
+  transition: all 0.50s linear;
+
+  &--dark {
+    color: $color-white;
+    background-color: $color-primary;
+  }
 }
 
 .container {

@@ -1,11 +1,14 @@
+import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
 
 import { IconType } from '../../../../data/types/enums';
+import { useAppSelector } from '../../../../services/app/hooks';
 import { Icon } from '../../ui/Icon';
 import './ToTopButton.scss';
 
 export const ToTopButton: React.FC = () => {
   const location = useLocation();
+  const { isDarkMode } = useAppSelector(state => state.theme);
 
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -18,7 +21,9 @@ export const ToTopButton: React.FC = () => {
   return (
     <Link
       to={`${location.pathname}`}
-      className="footer__button-top button-top"
+      className={classNames('footer__button-top', 'button-top', {
+        'button-top--dark': isDarkMode,
+      })}
       type="button"
       data-testid="to-top-button"
       onClick={handleScrollToTop}
@@ -28,8 +33,12 @@ export const ToTopButton: React.FC = () => {
       </p>
 
       <Icon
-        type={IconType.ARROW_UP}
-        addClassName="button-top__icon"
+        type={isDarkMode
+          ? IconType.ARROW_UP_DARK
+          : IconType.ARROW_UP}
+        addClassName={classNames('button-top__icon', {
+          'button-top__icon--dark': isDarkMode,
+        })}
       />
     </Link>
   );

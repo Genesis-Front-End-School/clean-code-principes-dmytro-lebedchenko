@@ -19,4 +19,10 @@
     color: $color-primary;
     cursor: pointer;
   }
+
+  &--dark {
+    &:hover {
+      color: $color-white;
+    }
+  }
 }

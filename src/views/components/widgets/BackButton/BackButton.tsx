@@ -1,21 +1,31 @@
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
 import { IconType } from '../../../../data/types/enums';
+import { useAppSelector } from '../../../../services/app/hooks';
 import { Icon } from '../../ui/Icon';
 import './BackButton.scss';
 
-export const BackButton: React.FC = () => (
-  <Link
-    to="/"
-    className="back-button"
-    type="button"
-    data-testid="back-button"
-  >
-    <Icon
-      type={IconType.ARROW_LEFT}
-      addClassName="back-button__arrow"
-    />
+export const BackButton: React.FC = () => {
+  const { isDarkMode } = useAppSelector(state => state.theme);
 
-    Back
-  </Link>
-);
+  return (
+    <Link
+      to="/"
+      className={classNames('back-button', {
+        'back-button--dark': isDarkMode,
+      })}
+      type="button"
+      data-testid="back-button"
+    >
+      <Icon
+        type={isDarkMode
+          ? IconType.ARROW_LEFT_DARK
+          : IconType.ARROW_LEFT}
+        addClassName="back-button__arrow"
+      />
+
+      Back
+    </Link>
+  );
+};

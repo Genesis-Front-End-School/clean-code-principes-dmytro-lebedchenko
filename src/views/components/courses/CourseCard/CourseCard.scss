@@ -23,11 +23,19 @@
   }
 
   &:hover {
-    box-shadow: 0 3px 13px rgba(23, 32, 49, 0.26);
+    box-shadow: 0 3px 13px $color-shadow-primary;
   }
 
   &:hover &__pic {
     transform: scale(1.1);
+  }
+
+  &--dark {
+    background-color: $color-primary;
+
+    &:hover {
+      box-shadow: 0 3px 13px $color-shadow-primary-dark;
+    }
   }
 
   &__video {
@@ -60,6 +68,10 @@
   &__title {
     @extend %title-text;
     margin-bottom: 16px;
+
+    &--dark {
+      color: $color-white;
+    }
   }
 
   &__category {
@@ -68,6 +80,11 @@
     margin-bottom: 16px;
     padding: 10px;
     border-radius: 18px;
+    transition: all 0.5s;
+
+    &--dark {
+      color: $color-white;
+    }
 
     &--yellow {
       background-color: $color-yellow;
@@ -103,6 +120,10 @@
   &__feature-info {
     @extend %small-text;
     color: $color-primary;
+
+    &--dark {
+      color: $color-white;
+    }
 
     &--rating {
       display: flex;

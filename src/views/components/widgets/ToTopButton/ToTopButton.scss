@@ -12,6 +12,24 @@
   transition: color 0.5s, border 0.5s;
   cursor: pointer;
 
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:hover &__icon {
+    border-color: $color-primary;
+  }
+
+  &--dark {
+    &:hover {
+      color: $color-white;
+    }
+
+    &:hover .button-top__icon {
+      border-color: $color-white;
+    }
+  }
+
   &__icon {
     margin-left: 0;
     padding: 9px;
@@ -30,13 +48,9 @@
     @include onTablet {
       display: flex;
     }
-  }
 
-  &:hover {
-    color: $color-primary;
-  }
-
-  &:hover &__icon {
-    border-color: $color-primary;
+    &--dark {
+      color: $color-white;
+    }
   }
 }

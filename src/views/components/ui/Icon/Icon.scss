@@ -13,6 +13,10 @@
     &--disabled {
       background-image: url(../../../images/icons/arrow-left.svg);
     }
+
+    &--dark {
+      background-image: url(../../../images/icons/arrow-left-dark.svg);
+    }
   }
 
   &__arrow-right {
@@ -21,6 +25,10 @@
     &--disabled {
       background-image: url(../../../images/icons/arrow-right.svg);
     }
+
+    &--dark {
+      background-image: url(../../../images/icons/arrow-right-dark.svg);
+    }
   }
 
   &__arrow-up {
@@ -28,6 +36,10 @@
 
     &--disabled {
       background-image: url(../../../images/icons/arrow-up.svg);
+    }
+
+    &--dark {
+      background-image: url(../../../images/icons/arrow-up-dark.svg);
     }
   }
 
@@ -45,13 +57,25 @@
 
   &__star-empty {
     background-image: url(../../../images/icons/star-empty.svg);
+
+    &--dark {
+      background-image: url(../../../images/icons/star-empty-dark.svg);
+    }
   }
 
   &__star-filled {
     background-image: url(../../../images/icons/star-filled.svg);
+
+    &--dark {
+      background-image: url(../../../images/icons/star-filled-dark.svg);
+    }
   }
 
   &__star-half-filled {
     background-image: url(../../../images/icons/star-half-filled.svg);
+
+    &--dark {
+      background-image: url(../../../images/icons/star-half-filled-dark.svg);
+    }
   }
 }

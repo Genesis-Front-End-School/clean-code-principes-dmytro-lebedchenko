@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import coursesSlice from '../features/coursesSlice';
 import selectedCourseSlice from '../features/selectedCourseSlice';
+import themeSlice from '../features/themeSlice';
 
 export const store = configureStore({
   reducer: {
     courses: coursesSlice,
     selectedCourse: selectedCourseSlice,
+    theme: themeSlice,
   },
 });
 

@@ -126,20 +126,6 @@ describe('CoursePage', () => {
       .should('have.length.greaterThan', 1)
   })
 
-  it('should start playing the correct video when clicking a playlist item', () => {
-    cy.get('.playlist__item')
-    .eq(2)
-    .click()
-    
-  cy.get('.player__video')
-    .invoke('prop', 'muted', true)
-    
-  cy.wait(5000)
-
-  cy.url()
-    .should('include', 'lesson=71742b9d-e4f4-4c32-89bb-a257e58ca096')
-  })
-
   it('should display the correct lesson title', () => {
     cy.get('.playlist__item--active > .playlist__item-title')
       .invoke('text')

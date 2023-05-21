@@ -1,4 +1,5 @@
 import { IconType } from '../../../../data/types/enums';
+import { useAppSelector } from '../../../../services/app/hooks';
 import { Icon } from '../../ui/Icon';
 import './RatingStars.scss';
 
@@ -7,6 +8,8 @@ type Props = {
 };
 
 export const RatingStars: React.FC<Props> = ({ rating }) => {
+  const { isDarkMode } = useAppSelector(state => state.theme);
+
   const fullStarsCount = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
 
@@ -22,11 +25,16 @@ export const RatingStars: React.FC<Props> = ({ rating }) => {
   const emptyStarsBase = getFilledArray(emptyStarsCount);
 
   return (
-    <div className="rating__stars stars" data-testid="rating-stars">
+    <div
+      className="rating__stars stars"
+      data-testid="rating-stars"
+    >
       {fullStarsBase.map((item) => (
         <Icon
           key={item}
-          type={IconType.STAR_FILLED}
+          type={isDarkMode
+            ? IconType.STAR_FILLED_DARK
+            : IconType.STAR_FILLED}
           addClassName="stars__star"
         />
       ))}
@@ -34,7 +42,9 @@ export const RatingStars: React.FC<Props> = ({ rating }) => {
       {hasHalfStar
         && (
           <Icon
-            type={IconType.STAR_HALF_FILLED}
+            type={isDarkMode
+              ? IconType.STAR_HALF_FILLED_DARK
+              : IconType.STAR_HALF_FILLED}
             addClassName="stars__star"
           />
         )}
@@ -42,7 +52,9 @@ export const RatingStars: React.FC<Props> = ({ rating }) => {
       {emptyStarsBase.map((item) => (
         <Icon
           key={item}
-          type={IconType.STAR_EMPTY}
+          type={isDarkMode
+            ? IconType.STAR_EMPTY_DARK
+            : IconType.STAR_EMPTY}
           addClassName="stars__star"
         />
       ))}

@@ -8,8 +8,10 @@ import {
 import { Link } from 'react-router-dom';
 
 import { Courses } from '../../../../data/types/models';
-import { useAppDispatch } from '../../../../services/app/hooks';
-import { selectedCourseInit } from '../../../../services/features/selectedCourseSlice';
+import { useAppDispatch, useAppSelector } from '../../../../services/app/hooks';
+import {
+  selectedCourseInit,
+} from '../../../../services/features/selectedCourseSlice';
 import { RatingStars } from '../../widgets/RatingStars';
 import './CourseCard.scss';
 
@@ -27,6 +29,8 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
     meta,
     rating,
   } = course;
+
+  const { isDarkMode } = useAppSelector(state => state.theme);
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -61,11 +65,13 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
   };
 
   const courseCardClassNames = classNames(
-    'course-card__category',
-    { 'course-card__category--yellow': tags[0] === 'productivity' },
-    { 'course-card__category--purple': tags[0] === 'learning ability' },
-    { 'course-card__category--red': tags[0] === 'communication' },
-    { 'course-card__category--green': tags[0] === 'psychology' },
+    'course-card__category', {
+      'course-card__category--dark': isDarkMode,
+      'course-card__category--yellow': tags[0] === 'productivity',
+      'course-card__category--purple': tags[0] === 'learning ability',
+      'course-card__category--red': tags[0] === 'communication',
+      'course-card__category--green': tags[0] === 'psychology',
+    },
   );
 
   useEffect(() => {
@@ -100,7 +106,9 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
   return (
     <Link
       to={`../course/${id}`}
-      className="course-card"
+      className={classNames('course-card', {
+        'course-card--dark': isDarkMode,
+      })}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onKeyDown={handleOnKeyDown}
@@ -129,7 +137,11 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
         )}
       </div>
 
-      <h3 className="course-card__title">
+      <h3
+        className={classNames('course-card__title', {
+          'course-card__title--dark': isDarkMode,
+        })}
+      >
         {title}
       </h3>
 
@@ -137,7 +149,11 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
         <span className="course-card__feature-item">
           Lessons count
 
-          <span className="course-card__feature-info">
+          <span
+            className={classNames('course-card__feature-info', {
+              'course-card__feature-info--dark': isDarkMode,
+            })}
+          >
             {lessonsCount}
           </span>
         </span>
@@ -145,7 +161,11 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
         <span className="course-card__feature-item">
           Rating
 
-          <span className="course-card__feature-info--rating rating">
+          <span
+            className="
+              course-card__feature-info--rating
+              rating"
+          >
             <RatingStars rating={rating} />
 
             {rating}
@@ -165,7 +185,9 @@ export const CourseCard: React.FC<Props> = ({ course }) => {
             {meta.skills?.map(skill => (
               <li
                 key={skill}
-                className="course-card__feature-info"
+                className={classNames('course-card__feature-info', {
+                  'course-card__feature-info--dark': isDarkMode,
+                })}
               >
                 {skill}
               </li>

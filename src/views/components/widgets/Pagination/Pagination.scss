@@ -6,6 +6,7 @@
   justify-content: center;
   margin-bottom: 40px;
   gap: 16px;
+  transition: all 0.5s;
 
   @extend %body-text;
   list-style: none;
@@ -21,6 +22,14 @@
     border-radius: 6px;
     transition: all 0.5s;
     cursor: pointer;
+
+    &--dark {
+      background-color: $color-primary;
+
+      &:hover {
+        border-color: $color-white;
+      }
+    }
 
     &:hover {
       border-color: $color-primary;
@@ -48,6 +57,16 @@
     border-radius: 6px;
     transition: all 0.5s;
     cursor: pointer;
+
+    &--dark {
+      color: $color-white;
+      background-color: $color-primary;
+
+      &-is-active {
+        color: $color-primary;
+        background-color: $color-white;
+      }
+    }
 
     &--is-active {
       color: $color-white;
