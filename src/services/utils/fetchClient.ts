@@ -1,4 +1,4 @@
-import { API_TOKEN, BASE_URL } from '../app/consts';
+import { API_TOKEN, BASE_URL } from "../app/consts";
 
 type RequestMethod = 'GET';
 

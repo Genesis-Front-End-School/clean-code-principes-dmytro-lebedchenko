@@ -14,6 +14,9 @@ describe('"CoursePage" page', () => {
         hasError: true,
         loaded: true,
       },
+      theme: {
+        isDarkMode: false,
+      }
     });
 
     const { getByTestId } = render(

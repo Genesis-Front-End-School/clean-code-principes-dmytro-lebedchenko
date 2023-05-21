@@ -1,5 +1,7 @@
 import { render } from '@testing-library/react';
+import { Provider } from 'react-redux';
 
+import { store } from '../../app/store';
 import { ErrorType } from '../../../data/types/enums';
 import {
   ErrorNotification,
@@ -10,7 +12,9 @@ describe('"ErrorNotification" component', () => {
     const error = ErrorType.GET_COURSES;
 
     const { getByText } = render(
-      <ErrorNotification error={error} />,
+      <Provider store={store}>
+        <ErrorNotification error={error} />
+      </Provider>,
     );
 
     const errorMessage = getByText(`...${error}...`);

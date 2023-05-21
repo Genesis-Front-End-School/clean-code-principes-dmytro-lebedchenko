@@ -1,14 +1,12 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
 
-import { ErrorType } from '../../../data/types/enums';
 import { useAppDispatch, useAppSelector } from '../../../services/app/hooks';
-import {
-  selectedCourseInit,
-} from '../../../services/features/selectedCourseSlice';
 import { ErrorNotification } from '../../components/common/ErrorNotification';
-import { Course } from '../../components/courses/Course';
 import { Loader } from '../../components/ui/Loader';
+import { Course } from '../../components/courses/Course';
+import { selectedCourseInit } from '../../../services/features/selectedCourseSlice';
+import { ErrorType } from '../../../data/types/enums';
 
 export const CoursePage: React.FC = () => {
   const dispatch = useAppDispatch();

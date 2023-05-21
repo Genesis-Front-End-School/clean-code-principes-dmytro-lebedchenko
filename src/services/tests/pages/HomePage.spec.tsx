@@ -16,6 +16,9 @@ describe('"HomePage" page', () => {
         hasError: true,
         loaded: true,
       },
+      theme: {
+        isDarkMode: false,
+      }
     });
 
     const { getByTestId } = render(
@@ -36,6 +39,9 @@ describe('"HomePage" page', () => {
         hasError: false,
         loaded: false,
       },
+      theme: {
+        isDarkMode: false,
+      }
     });
 
     const { getByTestId } = render(
@@ -56,6 +62,9 @@ describe('"HomePage" page', () => {
         hasError: false,
         loaded: true,
       },
+      theme: {
+        isDarkMode: false,
+      }
     });
 
     const { getByTestId } = render(

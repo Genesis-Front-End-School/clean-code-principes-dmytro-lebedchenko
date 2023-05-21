@@ -4,7 +4,9 @@ import {
   RenderResult,
 } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
+import { store } from '../../app/store';
 import { BackButton } from '../../../views/components/widgets/BackButton';
 
 describe('"BackButton" component', () => {
@@ -13,9 +15,11 @@ describe('"BackButton" component', () => {
 
   beforeEach(() => {
     wrapper = render(
-      <BrowserRouter>
-        <BackButton />
-      </BrowserRouter>,
+      <Provider store={store}>
+        <BrowserRouter>
+          <BackButton />
+        </BrowserRouter>
+      </Provider>,
     );
 
     backButton = wrapper.getByTestId('back-button');
