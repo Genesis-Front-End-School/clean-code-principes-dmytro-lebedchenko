@@ -17,6 +17,7 @@ describe('HomePage', () => {
   it('should play video on "CourseCard" hover if video is available', () => {
     cy.get('.course-card__image')
       .first()
+      .should('be.visible')
       .trigger('mouseover')
 
     cy.get('.course-card__video')
@@ -127,13 +128,16 @@ describe('CoursePage', () => {
 
   it('should start playing the correct video when clicking a playlist item', () => {
     cy.get('.playlist__item')
-      .eq(2)
-      .click()
+    .eq(2)
+    .click()
+    
+  cy.get('.player__video')
+    .invoke('prop', 'muted', true)
+    
+  cy.wait(5000)
 
-    cy.wait(2000)
-
-    cy.url()
-      .should('include', 'lesson=71742b9d-e4f4-4c32-89bb-a257e58ca096')
+  cy.url()
+    .should('include', 'lesson=71742b9d-e4f4-4c32-89bb-a257e58ca096')
   })
 
   it('should display the correct lesson title', () => {
