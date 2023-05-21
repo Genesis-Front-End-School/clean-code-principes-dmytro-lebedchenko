@@ -57,3 +57,12 @@ Additional tasks:
 
 ## Not Found page
 ![Not Found page](./readme/preview/not-found-page.gif)
+
+# How to run my project locally:
+  - npm i
+  - npm start
+  - tab will be opened automatically in your browser
+
+If you'll have a problem with blocking CORSin your browser, you can install the [Chrome plugin](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) .
+And don't forget to turn it on, as on the screenshot below.
+![CORS issue](./readme/preview/cors_issue.jpeg)

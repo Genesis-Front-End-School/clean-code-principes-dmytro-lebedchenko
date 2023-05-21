@@ -7,7 +7,7 @@ export const Course: React.FC = () => {
   const { selectedCourse } = useAppSelector(state => state.selectedCourse);
 
   return (
-    <div className="course">
+    <div className="course" data-testid="course">
       <BackButton />
 
       <div className="course__title title">

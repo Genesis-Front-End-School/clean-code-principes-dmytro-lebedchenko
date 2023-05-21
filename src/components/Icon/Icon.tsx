@@ -15,5 +15,6 @@ export const Icon: React.FC<Props> = ({ type, addClassName }) => (
       type,
       addClassName,
     )}
+    data-testid={type}
   />
 );

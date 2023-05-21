@@ -39,7 +39,7 @@ export const CourseList: React.FC = () => {
 
   return (
     <>
-      <div className="course-list">
+      <div className="course-list" data-testid="course-list">
         {visibleCourses.map(item => (
           <CourseCard
             key={item.id}

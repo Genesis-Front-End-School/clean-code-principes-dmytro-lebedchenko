@@ -171,7 +171,7 @@ export const Lesson: React.FC = () => {
   }, [lesson]);
 
   return (
-    <div className="course__lesson lesson">
+    <div className="course__lesson lesson" data-testid="lesson">
       <div className="lesson__player player">
         <h2 className="player__title">
           {lesson?.title}
@@ -179,6 +179,7 @@ export const Lesson: React.FC = () => {
 
         <video
           className="player__video"
+          data-testid="lesson-video"
           poster={`${lesson?.previewImageLink}/lesson-${lesson?.order}.webp`}
           ref={videoRef}
           controls

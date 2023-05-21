@@ -6,6 +6,9 @@ export const NotFoundPage: React.FC = () => (
       Oh, no! Page is not found...
     </h1>
 
-    <span className="not-found-page__image" />
+    <span
+      className="not-found-page__image"
+      data-testid="not-found-image"
+    />
   </div>
 );

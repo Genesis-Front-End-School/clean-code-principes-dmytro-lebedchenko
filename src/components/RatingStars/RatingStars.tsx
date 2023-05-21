@@ -22,7 +22,7 @@ export const RatingStars: React.FC<Props> = ({ rating }) => {
   const emptyStarsBase = getFilledArray(emptyStarsCount);
 
   return (
-    <div className="rating__stars stars">
+    <div className="rating__stars stars" data-testid="rating-stars">
       {fullStarsBase.map((item) => (
         <Icon
           key={item}

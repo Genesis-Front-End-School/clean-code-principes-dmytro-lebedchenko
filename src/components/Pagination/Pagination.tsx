@@ -105,7 +105,7 @@ export const Pagination: React.FC<Props> = ({ length }) => {
         <button
           type="button"
           className="pagination__button"
-          data-cy="paginationLeft"
+          data-testid="pagination-left"
           disabled={disabledLeftButton}
           onClick={() => handleArrowClick('prev')}
         >
@@ -136,7 +136,7 @@ export const Pagination: React.FC<Props> = ({ length }) => {
         <button
           type="button"
           className="pagination__button"
-          data-cy="paginationRight"
+          data-testid="pagination-right"
           disabled={disabledRightButton}
           onClick={() => handleArrowClick('next')}
         >

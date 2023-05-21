@@ -20,6 +20,7 @@ export const ToTopButton: React.FC = () => {
       to={`${location.pathname}`}
       className="footer__button-top button-top"
       type="button"
+      data-testid="to-top-button"
       onClick={handleScrollToTop}
     >
       <p className="button-top__text">

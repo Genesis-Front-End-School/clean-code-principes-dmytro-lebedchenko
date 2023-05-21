@@ -9,7 +9,7 @@ export const BackButton: React.FC = () => (
     to="/"
     className="back-button"
     type="button"
-    data-cy="backButton"
+    data-testid="back-button"
   >
     <Icon
       type={IconType.ARROW_LEFT}
