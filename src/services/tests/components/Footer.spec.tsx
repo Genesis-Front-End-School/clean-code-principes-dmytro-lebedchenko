@@ -3,11 +3,11 @@ import {
   render,
   screen,
 } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
+import { Footer } from '../../../views/components/common';
 import { store } from '../../app/store';
-import { Footer } from '../../../views/components/common/Footer';
 
 describe('"Footer" component', () => {
   let wrapper: RenderResult;

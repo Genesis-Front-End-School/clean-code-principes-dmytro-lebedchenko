@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../../../services/app/hooks';
-import { BackButton } from '../../widgets/BackButton';
+import { BackButton } from '../../widgets';
 import { Lesson } from '../Lesson';
 import './Course.scss';
 

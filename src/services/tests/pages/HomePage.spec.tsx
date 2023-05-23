@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 
-import { HomePage } from '../../../views/pages/HomePage';
+import { HomePage } from '../../../views/pages';
 import { testCourses } from '../testData';
 
 describe('"HomePage" page', () => {
@@ -18,7 +18,7 @@ describe('"HomePage" page', () => {
       },
       theme: {
         isDarkMode: false,
-      }
+      },
     });
 
     const { getByTestId } = render(
@@ -41,7 +41,7 @@ describe('"HomePage" page', () => {
       },
       theme: {
         isDarkMode: false,
-      }
+      },
     });
 
     const { getByTestId } = render(
@@ -64,7 +64,7 @@ describe('"HomePage" page', () => {
       },
       theme: {
         isDarkMode: false,
-      }
+      },
     });
 
     const { getByTestId } = render(

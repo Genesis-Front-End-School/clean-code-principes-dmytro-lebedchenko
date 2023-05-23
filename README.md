@@ -48,6 +48,7 @@ Additional tasks:
 - video loading animation;
 - create Light and Dark Mode for the interface;
 - create tests using Jest and Cypress, and generate a Mochaawesome test report at the end;
+- create your own npm package and use it in your project;
 
 # Project structure
 ## Home page

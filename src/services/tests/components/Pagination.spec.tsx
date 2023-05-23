@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { useSearchParams } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 
+import { Pagination } from '../../../views/components/widgets';
 import { store } from '../../app/store';
-import { Pagination } from '../../../views/components/widgets/Pagination';
 
 jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn(),
@@ -28,7 +28,7 @@ describe('"Pagination" component', () => {
     render(
       <Provider store={store}>
         <Pagination length={length} />
-      </Provider>
+      </Provider>,
     );
 
     const paginationList = screen.getByRole('list');
@@ -47,7 +47,7 @@ describe('"Pagination" component', () => {
     render(
       <Provider store={store}>
         <Pagination length={length} />
-      </Provider>
+      </Provider>,
     );
 
     const paginationList = screen.getByRole('list');
@@ -66,7 +66,7 @@ describe('"Pagination" component', () => {
     render(
       <Provider store={store}>
         <Pagination length={length} />
-      </Provider>
+      </Provider>,
     );
 
     const leftButton = screen.getByTestId('pagination-left');
@@ -83,7 +83,7 @@ describe('"Pagination" component', () => {
     render(
       <Provider store={store}>
         <Pagination length={length} />
-      </Provider>
+      </Provider>,
     );
 
     const rightButton = screen.getByTestId('pagination-right');
@@ -100,7 +100,7 @@ describe('"Pagination" component', () => {
     render(
       <Provider store={store}>
         <Pagination length={length} />
-      </Provider>
+      </Provider>,
     );
 
     const leftButton = screen.getByTestId('pagination-left');
@@ -117,7 +117,7 @@ describe('"Pagination" component', () => {
     render(
       <Provider store={store}>
         <Pagination length={length} />
-      </Provider>
+      </Provider>,
     );
 
     const rightButton = screen.getByTestId('pagination-right');

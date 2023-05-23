@@ -8,7 +8,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Courses } from '../../../../data/types/models';
 import { ITEMS_ON_PAGE } from '../../../../services/app/consts';
 import { useAppSelector } from '../../../../services/app/hooks';
-import { Pagination } from '../../widgets/Pagination';
+import { Pagination } from '../../widgets';
 import { CourseCard } from '../CourseCard';
 import './CourseList.scss';
 

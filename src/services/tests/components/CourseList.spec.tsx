@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { CourseList } from '../../../views/components/courses/CourseList';
+import { CourseList } from '../../../views/components/courses';
 import { testCourses } from '../testData';
 
 const mockStore = configureStore([thunk]);
@@ -20,7 +20,7 @@ describe('"CourseList" component', () => {
       },
       theme: {
         isDarkMode: false,
-      }
+      },
     });
   });
 

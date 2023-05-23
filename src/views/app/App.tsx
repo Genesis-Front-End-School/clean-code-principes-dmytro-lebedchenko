@@ -4,8 +4,7 @@ import { Outlet } from 'react-router';
 
 import { useAppDispatch, useAppSelector } from '../../services/app/hooks';
 import { coursesInit } from '../../services/features/coursesSlice';
-import { Footer } from '../components/common/Footer';
-import { Header } from '../components/common/Header';
+import { Header, Footer } from '../components/common';
 import './App.scss';
 
 export const App: React.FC = () => {

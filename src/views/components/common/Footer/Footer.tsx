@@ -1,10 +1,11 @@
 import classNames from 'classnames';
+import { useWindowSize } from 'courses-app-ui-tools';
 import { Link } from 'react-router-dom';
 
 import { ROUTE_PATH } from '../../../../services/app/consts';
-import { useAppSelector, useWindowSize } from '../../../../services/app/hooks';
-import { Logo } from '../../ui/Logo';
-import { ToTopButton } from '../../widgets/ToTopButton';
+import { useAppSelector } from '../../../../services/app/hooks';
+import { Logo } from '../../ui';
+import { ToTopButton } from '../../widgets';
 import './Footer.scss';
 
 export const Footer: React.FC = () => {

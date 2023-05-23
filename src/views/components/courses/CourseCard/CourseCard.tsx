@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { RatingStars } from 'courses-app-ui-tools';
 import Hls from 'hls.js';
 import {
   useEffect,
@@ -8,11 +9,13 @@ import {
 import { Link } from 'react-router-dom';
 
 import { Courses } from '../../../../data/types/models';
-import { useAppDispatch, useAppSelector } from '../../../../services/app/hooks';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '../../../../services/app/hooks';
 import {
   selectedCourseInit,
 } from '../../../../services/features/selectedCourseSlice';
-import { RatingStars } from '../../widgets/RatingStars';
 import './CourseCard.scss';
 
 type Props = {

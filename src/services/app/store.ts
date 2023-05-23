@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import coursesSlice from '../features/coursesSlice';
 import selectedCourseSlice from '../features/selectedCourseSlice';
 import themeSlice from '../features/themeSlice';

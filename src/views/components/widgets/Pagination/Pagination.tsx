@@ -1,16 +1,13 @@
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-import {
-  useNavigate,
-  useSearchParams,
-} from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { IconType } from '../../../../data/types/enums';
 import { ButtonType } from '../../../../data/types/models';
 import { ITEMS_ON_PAGE } from '../../../../services/app/consts';
 import { useAppSelector } from '../../../../services/app/hooks';
 import { getSearchWith } from '../../../../services/utils/searchHelper';
-import { Icon } from '../../ui/Icon';
+import { Icon } from '../../ui';
 import './Pagination.scss';
 
 type Props = {

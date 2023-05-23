@@ -3,11 +3,11 @@ import {
   fireEvent,
   RenderResult,
 } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
 
+import { ToTopButton } from '../../../views/components/widgets';
 import { store } from '../../app/store';
-import { ToTopButton } from '../../../views/components/widgets/ToTopButton';
 
 describe('"ToTopButton" component', () => {
   let wrapper: RenderResult;
