@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 
-import { CourseCard } from '../../../views/components/courses/CourseCard';
+import { CourseCard } from '../../../views/components/courses';
 import { store } from '../../app/store';
 import { testCourse } from '../testData';
 

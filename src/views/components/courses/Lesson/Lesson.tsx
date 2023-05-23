@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { useLocalStorage } from 'courses-app-ui-tools';
 import Hls from 'hls.js';
 import { debounce } from 'lodash';
 import {
@@ -13,12 +14,10 @@ import { useSearchParams } from 'react-router-dom';
 import { IconType } from '../../../../data/types/enums';
 import { LessonType } from '../../../../data/types/models';
 import { VIDEO_OPTIONS } from '../../../../services/app/consts';
-import {
-  useAppSelector,
-  useLocalStorage,
-} from '../../../../services/app/hooks';
+import { useAppSelector } from '../../../../services/app/hooks';
 import { getSearchWith } from '../../../../services/utils/searchHelper';
-import { Icon } from '../../ui/Icon';
+import { Icon } from '../../ui';
+
 import './Lesson.scss';
 
 export const Lesson: React.FC = () => {

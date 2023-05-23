@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 
 import { useAppSelector } from '../../../../services/app/hooks';
-import { Logo } from '../../ui/Logo';
-import { ThemeToggler } from '../../widgets/ThemeToggler';
+import { Logo } from '../../ui';
+import { ThemeToggler } from '../../widgets';
 import './Header.scss';
 
 export const Header: React.FC = () => {

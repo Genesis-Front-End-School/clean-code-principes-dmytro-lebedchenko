@@ -1,8 +1,9 @@
-import { ErrorType } from "../../../data/types/enums";
-import { useAppSelector } from "../../../services/app/hooks";
-import { ErrorNotification } from "../../components/common/ErrorNotification";
-import { CourseList } from "../../components/courses/CourseList";
-import { Loader } from "../../components/ui/Loader";
+import { Loader } from 'courses-app-ui-tools';
+
+import { ErrorType } from '../../../data/types/enums';
+import { useAppSelector } from '../../../services/app/hooks';
+import { ErrorNotification } from '../../components/common';
+import { CourseList } from '../../components/courses';
 
 export const HomePage: React.FC = () => {
   const {

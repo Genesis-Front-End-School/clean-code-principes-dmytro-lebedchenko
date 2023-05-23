@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { IconType } from '../../../data/types/enums';
-import { Icon } from '../../../views/components/ui/Icon';
+import { Icon } from '../../../views/components/ui';
 
 describe('"Icon" component', () => {
   it('should render with additional class name', () => {

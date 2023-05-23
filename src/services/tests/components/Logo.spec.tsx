@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
 
+import { Logo } from '../../../views/components/ui';
 import { store } from '../../app/store';
-import { Logo } from '../../../views/components/ui/Logo';
 
 describe('"Logo" component', () => {
   it('should render correctly with big logo', () => {

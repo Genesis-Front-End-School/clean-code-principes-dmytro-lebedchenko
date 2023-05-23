@@ -1,10 +1,7 @@
+import { useLocalStorage } from 'courses-app-ui-tools';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
-import {
-  useAppDispatch,
-  useAppSelector,
-  useLocalStorage,
-} from '../../../../services/app/hooks';
+import { useAppDispatch, useAppSelector } from '../../../../services/app/hooks';
 import { setTheme } from '../../../../services/features/themeSlice';
 import './ThemeToggler.scss';
 

@@ -1,9 +1,9 @@
 import { RenderResult, render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
+import { Header } from '../../../views/components/common';
 import { store } from '../../app/store';
-import { Header } from '../../../views/components/common/Header';
 
 describe('"Header" component', () => {
   let wrapper: RenderResult;

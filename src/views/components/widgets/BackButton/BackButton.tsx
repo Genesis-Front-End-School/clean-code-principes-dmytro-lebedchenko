@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { IconType } from '../../../../data/types/enums';
 import { useAppSelector } from '../../../../services/app/hooks';
-import { Icon } from '../../ui/Icon';
+import { Icon } from '../../ui';
 import './BackButton.scss';
 
 export const BackButton: React.FC = () => {

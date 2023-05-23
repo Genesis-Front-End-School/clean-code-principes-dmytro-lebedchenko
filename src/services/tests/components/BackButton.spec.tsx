@@ -3,11 +3,11 @@ import {
   fireEvent,
   RenderResult,
 } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
+import { BackButton } from '../../../views/components/widgets';
 import { store } from '../../app/store';
-import { BackButton } from '../../../views/components/widgets/BackButton';
 
 describe('"BackButton" component', () => {
   let wrapper: RenderResult;

@@ -1,12 +1,17 @@
+import { Loader } from 'courses-app-ui-tools';
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
 
-import { useAppDispatch, useAppSelector } from '../../../services/app/hooks';
-import { ErrorNotification } from '../../components/common/ErrorNotification';
-import { Loader } from '../../components/ui/Loader';
-import { Course } from '../../components/courses/Course';
-import { selectedCourseInit } from '../../../services/features/selectedCourseSlice';
 import { ErrorType } from '../../../data/types/enums';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '../../../services/app/hooks';
+import {
+  selectedCourseInit,
+} from '../../../services/features/selectedCourseSlice';
+import { ErrorNotification } from '../../components/common';
+import { Course } from '../../components/courses';
 
 export const CoursePage: React.FC = () => {
   const dispatch = useAppDispatch();

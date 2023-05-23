@@ -4,7 +4,7 @@ import {
   RenderResult,
 } from '@testing-library/react';
 
-import { NotFoundPage } from '../../../views/pages/NotFoundPage';
+import { NotFoundPage } from '../../../views/pages';
 
 describe('"NotFoundPage" page', () => {
   let wrapper: RenderResult;
